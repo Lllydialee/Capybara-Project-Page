@@ -1,5 +1,10 @@
 (() => {
   const D = window.PROJECT_DATA;
+  const videoAttrs = (poster) => {
+    const attrs = ['autoplay', 'muted', 'loop', 'playsinline', 'preload="metadata"'];
+    if (poster) attrs.push(`poster="${escapeHtmlAttr(poster)}"`);
+    return attrs.join(" ");
+  };
 
   // --------- Small SVG icon set (no external dependencies) ---------
   const ICONS = {
@@ -86,11 +91,7 @@
     genImageGrid.innerHTML = D.genImages.map(x => `
       <div class="media-card" data-prompt="${escapeHtmlAttr(x.prompt)}">
         <button class="info-btn" title="Show prompt">ⓘ</button>
-        <img class="media" src="${x.media}" alt="${escapeHtmlAttr(x.title || "Generated image")}" loading="lazy" />
-        <div class="media-meta">
-          <div class="label">${escapeHtml(x.title || "Image")}</div>
-          <div class="sub">Hover to view prompt</div>
-        </div>
+        <img class="media" src="${x.media}" alt="" loading="lazy" />
       </div>
     `).join("");
 
@@ -105,13 +106,9 @@
     genVideoGrid.innerHTML = D.genVideos.map(x => `
       <div class="media-card" data-prompt="${escapeHtmlAttr(x.prompt)}">
         <button class="info-btn" title="Show prompt">ⓘ</button>
-        <video class="media" controls playsinline preload="metadata">
+        <video class="media" controls ${videoAttrs(x.poster)}>
           <source src="${x.media}" type="video/mp4" />
         </video>
-        <div class="media-meta">
-          <div class="label">${escapeHtml(x.title || "Video")}</div>
-          <div class="sub">Hover to view prompt</div>
-        </div>
       </div>
     `).join("");
 
@@ -124,17 +121,15 @@
   const inContextGenStack = document.getElementById("inContextGenStack");
   if (inContextGenStack && D?.inContextGen) {
     inContextGenStack.innerHTML = D.inContextGen.map(item => `
-      <div class="ctx-card">
+      <div class="ctx-card ctx-card-compact">
         <div class="ctx-top">
           <div>
-            <div class="muted">Reference images</div>
             <div class="ctx-refgrid">
-              ${(item.refs || []).map(p => `<img src="${p}" alt="Reference image" loading="lazy" />`).join("")}
+              ${(item.refs || []).map(p => `<img src="${p}" alt="" loading="lazy" />`).join("")}
             </div>
           </div>
           <div class="ctx-output">
-            <div class="muted">Generated video</div>
-            <video controls playsinline preload="metadata">
+            <video controls ${videoAttrs(item.poster)}>
               <source src="${item.outputVideo}" type="video/mp4" />
             </video>
           </div>
@@ -151,14 +146,10 @@
       <div class="media-card" data-prompt="${escapeHtmlAttr(x.prompt)}">
         <button class="info-btn" title="Show prompt">ⓘ</button>
         <div class="compare" data-idx="${idx}">
-          <img class="before" src="${x.before}" alt="Before" loading="lazy" />
-          <img class="after" src="${x.after}" alt="After" loading="lazy" />
+          <img class="before" src="${x.before}" alt="" loading="lazy" />
+          <img class="after" src="${x.after}" alt="" loading="lazy" />
           <div class="handle"></div>
           <input class="range" type="range" min="0" max="100" value="50" aria-label="Compare slider" />
-        </div>
-        <div class="media-meta">
-          <div class="label">${escapeHtml(x.title || "Image Edit")}</div>
-          <div class="sub">Drag to compare, hover for prompt</div>
         </div>
       </div>
     `).join("");
@@ -193,14 +184,12 @@
       <div class="video-block" data-task="${escapeHtmlAttr(x.task)}">
         <div class="video-pair">
           <div>
-            <div class="muted">Source</div>
-            <video controls playsinline preload="metadata">
+            <video controls ${videoAttrs(x.srcPoster)}>
               <source src="${x.src}" type="video/mp4" />
             </video>
           </div>
           <div>
-            <div class="muted">Edited</div>
-            <video controls playsinline preload="metadata">
+            <video controls ${videoAttrs(x.outPoster)}>
               <source src="${x.out}" type="video/mp4" />
             </video>
           </div>
@@ -233,14 +222,12 @@
       <div class="ctx-card">
         <div class="ctx-top">
           <div>
-            <div class="muted">Reference images</div>
             <div class="ctx-refgrid">
-              ${(item.refs || []).map(p => `<img src="${p}" alt="Reference image" loading="lazy" />`).join("")}
+              ${(item.refs || []).map(p => `<img src="${p}" alt="" loading="lazy" />`).join("")}
             </div>
           </div>
           <div class="ctx-output">
-            <div class="muted">Output video</div>
-            <video controls playsinline preload="metadata">
+            <video controls ${videoAttrs(item.poster)}>
               <source src="${item.outputVideo}" type="video/mp4" />
             </video>
           </div>
@@ -258,17 +245,17 @@
         <div class="video-pair">
           <div>
             <div class="muted">Reference camera-motion video</div>
-            <video controls playsinline preload="metadata">
+            <video controls ${videoAttrs(item.refPoster)}>
               <source src="${item.refVideo}" type="video/mp4" />
             </video>
           </div>
           <div>
             <div class="muted">Original (top) & Re-cammed (bottom)</div>
             <div class="stack" style="gap:10px;">
-              <video controls playsinline preload="metadata">
+              <video controls ${videoAttrs(item.oriPoster)}>
                 <source src="${item.oriVideo}" type="video/mp4" />
               </video>
-              <video controls playsinline preload="metadata">
+              <video controls ${videoAttrs(item.outPoster)}>
                 <source src="${item.outVideo}" type="video/mp4" />
               </video>
             </div>

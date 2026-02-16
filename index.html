@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YourProject: Unified Generation & Editing</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>CAPYBARA: A Unified Visual Creation Model</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=20260216-5" />
 </head>
 
 <body>
   <!-- Top Nav (optional) -->
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand">CeliaEdit</div>
+      <div class="brand">
+        <img src="assets/img/Capybara.png" alt="" class="brand-icon" aria-hidden="true" />
+        <span>CAPYBARA</span>
+      </div>
       <nav class="nav">
         <a href="#abstract">Abstract</a>
         <a href="#generation">Generation</a>
         <a href="#editing">Editing</a>
-        <a href="#recam">Re-Cam</a>
-        <a href="#performance">Performance</a>
+        <!-- <a href="#recam">Re-Cam</a> -->
+        <!-- <a href="#performance">Performance</a> -->
       </nav>
     </div>
   </header>
@@ -25,25 +28,28 @@
   <!-- Hero -->
   <section class="hero hero-full">
     <div class="hero-bg" aria-hidden="true">
-      <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/teaser_poster.jpg">
-        <source src="assets/vid/teaser.mp4" type="video/mp4" />
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/demo_poster.jpg">
+        <source src="assets/vid/demo_web.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="hero-overlay"></div>
 
     <div class="hero-content container">
-      <h1 class="title">CeliaEdit</h1>
-      <p class="subtitle">Unified Understanding, Generation, and Editing for Visual Content</p>
+      <h1 class="title">
+        <img src="assets/img/Capybara.png" alt="" class="title-icon" aria-hidden="true" />
+        <span>CAPYBARA</span>
+      </h1>
+      <p class="subtitle">Unified Visual Creation Model</p>
 
       <div class="authors">
-        <span class="author">Author A<sup>1</sup></span>
-        <span class="author">Author B<sup>2</sup></span>
-        <span class="author">Author C<sup>1,2</sup></span>
+        <span class="author">Celia Research Team</span>
+        <!-- <span class="author">Author B<sup>2</sup></span>
+        <span class="author">Author C<sup>1,2</sup></span> -->
       </div>
-      <div class="affiliations">
+      <!-- <div class="affiliations">
         <span><sup>1</sup>University / Lab</span>
         <span><sup>2</sup>Company / Institute</span>
-      </div>
+      </div> -->
 
       <!-- Icon buttons -->
       <div class="icon-row" id="resourceButtons">
@@ -60,8 +66,8 @@
         <div class="card-subtitle">We recommend watching with sound on.</div>
       </div>
       <div class="card-body">
-        <video class="teaser-video" controls playsinline preload="metadata" poster="assets/img/teaser_poster.jpg">
-          <source src="assets/vid/teaser.mp4" type="video/mp4" />
+        <video class="teaser-video" controls playsinline preload="metadata" poster="assets/img/demo_poster.jpg">
+          <source src="assets/vid/demo_web.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
@@ -76,23 +82,22 @@
     <div class="two-col">
       <div class="col text">
         <p>
-          Write your abstract here. Keep it tight: problem → gap → method → key results → why it matters.
-          This layout mirrors the common “text left, framework right” academic project-page pattern. 
+          Rapid advancements in Multimodal Large Language Models have accelerated visual content creation, yet today’s ecosystem remains fragmented across images and videos, as well as across generation, controllable synthesis, and transformation. This fragmentation makes it difficult to build a single system that consistently grounds user intent, preserves identity and structure, and maintains temporal coherence under diverse conditioning signals. We introduce <strong>Capybara</strong>, a unified visual creation foundation model that supports from-scratch creation (T2I, T2V), conditional generation (I2V), and transformation under rich multimodal context within one architecture and one conditioning interface. Capybara is enabled by three key components: (i) a native unified design that decouples semantic intent modeling from pixel synthesis, strengthening intent grounding and reliable instruction following; (ii) an intrinsic 3D-aware consistency mechanism that integrates geometric priors (e.g., depth and normal cues) to stabilize identity and structure across space and time; and (iii) a multi-task training paradigm powered by a diverse data synthesis pipeline, which promotes broad generalization across heterogeneous creation modes. Extensive evaluations show that Capybara delivers high-fidelity outputs with precise semantic adherence and physics-grounded spatiotemporal coherence, providing a seamless end-to-end workflow that unifies image-level precision with video-level dynamics.
         </p>
-        <p>
+        <!-- <p>
           You can add a short “Contributions” bullet list here if you like.
         </p>
         <ul class="bullets">
           <li>Unified generation and editing under one framework.</li>
           <li>Strong instruction following + context preservation.</li>
           <li>Competitive performance across tasks.</li>
-        </ul>
+        </ul> -->
       </div>
 
       <div class="col figure">
         <figure class="figure-card">
-          <img src="assets/img/framework.png" alt="Framework figure" />
-          <figcaption>Figure 1. Framework overview of YourProject.</figcaption>
+          <img src="assets/img/pipeline.png" alt="Pipeline figure" />
+          <figcaption>Figure 1. <strong>Pipeline overview.</strong> Given a system prompt and an instruction (e.g., ``Add the Pac-Man in the reference image to the video.''), a frozen Semantic Module encodes the textual intent into vision-semantic guidance, while a frozen Vision Module extracts visual reference features. These conditions are fused by stacked MMDiT blocks ($\times N$) to denoise the latent representation and synthesize the final output, enabling unified instruction-driven image/video generation and editing.</figcaption>
         </figure>
       </div>
     </div>
@@ -102,12 +107,12 @@
   <section id="generation" class="container section">
     <div class="section-head">
       <h2>Generation</h2>
-      <p class="muted">Hover on images/videos to see the prompt. (Mobile: tap the ⓘ button.)</p>
+      <!-- <p class="muted">Hover on images/videos to see the prompt. (Mobile: tap the ⓘ button.)</p> -->
     </div>
 
     <div class="tabs" data-tabs="generation">
-      <button class="tab active" data-tab="gen-img">Instruct Image Generation</button>
-      <button class="tab" data-tab="gen-vid">Instruct Video Generation</button>
+      <button class="tab active" data-tab="gen-img">Text-to-Image</button>
+      <button class="tab" data-tab="gen-vid">Text-to-Video</button>
       <button class="tab" data-tab="gen-ctx">In-Context Generation</button>
     </div>
 
@@ -130,12 +135,12 @@
   <section id="editing" class="container section">
     <div class="section-head">
       <h2>Editing</h2>
-      <p class="muted">Image editing supports a drag-to-compare slider. Video editing shows Source vs Edited.</p>
+      <!-- <p class="muted">Image editing supports a drag-to-compare slider. Video editing shows Source vs Edited.</p> -->
     </div>
 
     <div class="tabs" data-tabs="editing">
-      <button class="tab active" data-tab="edit-img">Instruct Image Editing</button>
-      <button class="tab" data-tab="edit-vid">Instruct Video Editing</button>
+      <button class="tab active" data-tab="edit-img">Instruction-based Image Editing</button>
+      <button class="tab" data-tab="edit-vid">Instruction-based Video Editing</button>
       <button class="tab" data-tab="edit-ctx">In-Context Editing</button>
     </div>
 
@@ -159,6 +164,7 @@
   </section>
 
   <!-- Video conditioned re-cam -->
+  <!--
   <section id="recam" class="container section">
     <div class="section-head">
       <h2>Video-Conditioned Re-Cam</h2>
@@ -166,8 +172,10 @@
     </div>
     <div class="stack" id="recamStack"></div>
   </section>
+  -->
 
   <!-- Performance comparison -->
+  <!--
   <section id="performance" class="container section">
     <div class="section-head">
       <h2>Performance Comparison</h2>
@@ -200,10 +208,11 @@
       </table>
     </div>
   </section>
+  -->
 
   <footer class="footer container">
     <div class="footer-inner">
-      <div class="muted">© <span id="year"></span> YourProject. Built with vanilla HTML/CSS/JS for GitHub Pages.</div>
+      <div class="muted">© <span id="year"></span> CAPYBARA. Built with vanilla HTML/CSS/JS for GitHub Pages.</div>
     </div>
   </footer>
 
@@ -216,7 +225,7 @@
     </div>
   </div>
 
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/data.js?v=20260216-3"></script>
+  <script src="assets/js/main.js?v=20260216-3"></script>
 </body>
 </html>

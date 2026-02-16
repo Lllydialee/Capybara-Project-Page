@@ -1,5 +1,5 @@
 :root{
-  --bg: #0b0c10;
+  --bg: #0a1630;
   --panel: #111318;
   --panel2: #0f1116;
   --text: #e7e7ea;
@@ -20,7 +20,7 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   background: radial-gradient(1200px 600px at 10% 0%, rgba(125,211,252,0.12), transparent 60%),
               radial-gradient(900px 500px at 90% 10%, rgba(244,114,182,0.10), transparent 60%),
-              var(--bg);
+              linear-gradient(180deg, #081327 0%, #0a1b3a 100%);
   color: var(--text);
   line-height: 1.6;
 }
@@ -75,7 +75,7 @@ a:hover{ color: var(--accent); }
   align-items:center;
   justify-content:center;
   overflow: hidden;
-  padding: 80px 0 70px;
+  padding: 80px 0 36px;
 }
 .hero-content{
   position: relative;
@@ -175,10 +175,11 @@ a:hover{ color: var(--accent); }
   justify-content: center;
   position: relative;
   z-index: 1;
-  background: var(--bg);
+  background: transparent;
 }
 .after-hero{
   margin-top: 0;
+  padding-top: 0;
 }
 
 .section-head{
@@ -189,8 +190,15 @@ a:hover{ color: var(--accent); }
   font-size: 26px;
   letter-spacing: -0.2px;
 }
+#generation .section-head h2{
+  text-align: center;
+}
+#editing .section-head h2{
+  text-align: center;
+}
 .muted{ color: var(--muted); }
 .bullets{ margin: 10px 0 0 18px; color: var(--muted); }
+#abstract .col.text p{ text-align: justify; }
 
 .card{
   border: 1px solid var(--line);
@@ -272,11 +280,30 @@ a:hover{ color: var(--accent); }
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
+
+/* Image-edit uses masonry columns so mixed aspect ratios can pack tightly. */
+#imageEditGrid,
+#imageEditGrid.grid{
+  display: block !important;
+  column-count: 3;
+  column-gap: 14px;
+  column-fill: auto;
+}
+
+#imageEditGrid .media-card{
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 14px;
+  break-inside: avoid-column;
+}
+
 @media (max-width: 1000px){
   .grid{ grid-template-columns: repeat(2, 1fr); }
+  #imageEditGrid{ column-count: 2; }
 }
 @media (max-width: 650px){
   .grid{ grid-template-columns: 1fr; }
+  #imageEditGrid{ column-count: 1; }
 }
 
 .media-card{
@@ -337,6 +364,18 @@ a:hover{ color: var(--accent); }
   gap: 14px;
 }
 
+#inContextGenStack{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(460px, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+@media (max-width: 1100px){
+  #inContextGenStack{
+    grid-template-columns: 1fr;
+  }
+}
+
 .ctx-card{
   border: 1px solid var(--line);
   border-radius: var(--radius2);
@@ -346,10 +385,24 @@ a:hover{ color: var(--accent); }
 }
 .ctx-card:hover{ border-color: rgba(125,211,252,0.35); }
 
+.ctx-card-compact{
+  width: fit-content;
+  max-width: 100%;
+  justify-self: start;
+}
+
+.ctx-card-compact .ctx-top{
+  grid-template-columns: max-content max-content;
+}
+
+.ctx-card-compact .ctx-output{
+  width: fit-content;
+}
+
 .ctx-top{
   display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 8px;
   align-items:start;
 }
 @media (max-width: 900px){
@@ -357,16 +410,14 @@ a:hover{ color: var(--accent); }
 }
 
 .ctx-refgrid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-@media (max-width: 650px){
-  .ctx-refgrid{ grid-template-columns: repeat(2, 1fr); }
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .ctx-refgrid img{
-  width:100%;
+  width: 150px;
+  max-width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 14px;
@@ -375,11 +426,29 @@ a:hover{ color: var(--accent); }
 }
 
 .ctx-output video, .ctx-output img{
-  width:100%;
+  width: 100%;
+  min-width: 0;
   border-radius: 14px;
   border: 1px solid var(--line);
   background:#000;
   display:block;
+  height: auto;
+}
+.ctx-card-compact .ctx-output video,
+.ctx-card-compact .ctx-output img{
+  width: clamp(220px, 24vw, 300px);
+}
+@media (max-width: 900px){
+  .ctx-card-compact .ctx-top{
+    grid-template-columns: 1fr;
+  }
+  .ctx-card-compact .ctx-output{
+    width: 100%;
+  }
+  .ctx-card-compact .ctx-output video,
+  .ctx-card-compact .ctx-output img{
+    width: 100%;
+  }
 }
 
 .ctx-instruction{
@@ -459,12 +528,22 @@ a:hover{ color: var(--accent); }
 .compare img{
   width: 100%;
   display:block;
-  aspect-ratio: 1/1;
-  object-fit: cover;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* Ensure editing compare images keep native ratio (avoid 1:1 crop from stale/overridden rules) */
+#edit-img .compare img{
+  aspect-ratio: auto !important;
+  height: auto !important;
+  object-fit: initial !important;
 }
 .compare .after{
   position:absolute;
   inset:0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   clip-path: inset(0 0 0 50%);
 }
 .compare .handle{
@@ -554,4 +633,23 @@ a:hover{ color: var(--accent); }
 .footer-inner{
   border-top: 1px solid var(--line);
   padding-top: 14px;
+}
+
+.brand,
+.title{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon{
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.title-icon{
+  width: clamp(34px, 4.5vw, 52px);
+  height: clamp(34px, 4.5vw, 52px);
+  object-fit: contain;
 }
