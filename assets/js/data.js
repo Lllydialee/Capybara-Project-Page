@@ -13,47 +13,47 @@ window.PROJECT_DATA = {
     {
       title: "Case 01",
       media: "assets/img/gen/gen_01.png",
-      // prompt: "A cinematic product shot of a porcelain teacup on a reflective table, soft rim light, shallow depth of field."
+      prompt: "A group of hikers sitting around a campfire on a mountain peak at night, sparks rising into starry sky, warm firelight illuminating faces, cold blue moonlight on distant ridges, cozy yet epic atmosphere."
     },
     {
       title: "Case 02",
       media: "assets/img/gen/gen_02.png",
-      // prompt: "A stylized character portrait, studio lighting, crisp linework, subtle film grain."
+      prompt: "A pack of wolves howling under vibrant northern lights, snow blowing across frozen terrain, glowing aurora reflecting on icy ground, synchronized posture of wolves, dramatic wide-angle landscape composition, ultra detailed fur textures."
     },
     {
       title: "Case 03",
       media: "assets/img/gen/gen_03.png",
-      // prompt: "A stylized character portrait, studio lighting, crisp linework, subtle film grain."
+      prompt: "A cheerful anime-style school girl petting a tiny calico kitten under a blooming sakura tree, bright pastel colors, soft lighting, expressive eyes, detailed school uniform, floating petals, heartwarming slice-of-life scene."
     },
     {
       title: "Case 04",
       media: "assets/img/gen/gen_04.png",
-      // prompt: "A stylized character portrait, studio lighting, crisp linework, subtle film grain."
+      prompt: "An elegant ink-wash painting of a wandering knight in traditional robes next to a luminous white deer under blooming cherry blossoms, flowing brush strokes, subtle ink gradients, atmospheric depth, poetic serene composition."
     },
         {
       title: "Case 05",
       media: "assets/img/gen/gen_05.png",
-      // prompt: "A stylized character portrait, studio lighting, crisp linework, subtle film grain."
+      prompt: "A breathtaking valley at sunrise with rolling emerald hills, a crystal river winding through glittering wildflowers, mist lifting in golden morning light, majestic distant mountains, ultra wide panoramic composition, enhanced color saturation, dreamy soft focus."
     },
             {
       title: "Case 06",
       media: "assets/img/gen/gen_06.png",
-      // prompt: "A stylized character portrait, studio lighting, crisp linework, subtle film grain."
+      prompt: "A cartoon style capybara icon with cartoon style words 'Capybara' in the white background. "
     },
         {
       title: "Case 07",
       media: "assets/img/gen/gen_07.png",
-      // prompt: "A stylized character portrait, studio lighting, crisp linework, subtle film grain."
+      prompt: "A cozy café interior where a barista pours latte art while a fluffy cat jumps onto the counter playfully, warm ambient lighting, wooden furniture, customers smiling in the background, realistic steam particles, shallow depth of field."
     },
         {
       title: "Case 08",
       media: "assets/img/gen/gen_08.png",
-      // prompt: "A stylized character portrait, studio lighting, crisp linework, subtle film grain."
+      prompt: "Bold neon sign reading “夜之城” in glowing kanji characters, futuristic sci-fi billboard with animated light trails, electric violet and cyan glow, rain reflections on wet asphalt, gritty urban backdrop, cinematic atmosphere, high contrast illumination."
     },
     {
       title: "Case 09",
       media: "assets/img/gen/gen_09.png",
-      // prompt: "A stylized character portrait, studio lighting, crisp linework, subtle film grain."
+      prompt: "A majestic glowing owl perched on an ancient tree in a magical forest, ultra detailed feathers with bioluminescent patterns, soft rays of moonlight shining through misty woods, textured bark and fireflies floating, hyper realistic lighting, cinematic atmosphere, 8k resolution, shallow depth of field."
     },
     {
       title: "Case 10",
@@ -108,13 +108,13 @@ window.PROJECT_DATA = {
       title: "Case 01",
       media: "assets/vid/gen/gen_01.mp4",
       poster: "assets/img/gen/gen_01.png",
-      // prompt: "The red car is galloping on the track."
+      prompt: "A giant humpback whale and its calf gracefully swim in the crystal-clear, deep blue open ocean. A long shot is used, with the camera following from the side. The lighting is sunlight piercing through the water, creating beautiful, shimmering caustic patterns on their skin. The overall style is BBC nature documentary, fostering an atmosphere of majesty, serenity, and awe."
     },
         {
       title: "Case 02",
       media: "assets/vid/gen/gen_02.mp4",
       poster: "assets/img/gen/gen_02.png",
-      // prompt: "The red car is galloping on the track."
+      prompt: "A delicate watercolor illustration depicts three young women at a dining table celebrating by toasting with red wine glasses. In a bright, airy setting captured in a beautiful watercolor style, three young women are seated around a wooden dining table. The woman in the center has wavy blonde hair and wears a light blue dress. To her left, a woman with a chic brown bob wears a cream-colored blouse. To her right, a woman with long black hair is in a soft pink top. All three have joyful expressions and are smiling warmly. On the table in front of them are three elegant glasses filled with translucent red wine, their forms defined by soft, flowing colors. Initially, the women's hands, rendered with light, expressive strokes, are near their glasses. Then, they simultaneously reach out, grasp the stems of their wine glasses, and begin to lift them from the table. Next, they smoothly raise the glasses towards the center of the frame in a celebratory gesture, their movements fluid and graceful. Finally, the three glasses gently meet in the middle for a toast, the liquid inside swirling slightly with the motion. The background is an abstract wash of warm yellows and soft browns, suggesting a cozy indoor environment without specific details, characteristic of a wet-on-wet watercolor technique. The light source is diffuse and from the front, casting gentle, soft-edged shadows. The paper texture is subtly visible, with faint water stains at the edges of the color washes, enhancing the authentic watercolor aesthetic. The shot is at an eye-level angle with the main subjects. The camera remains static. The entire scene is defined by its distinct watercolor style, featuring translucent color layers, delicate ink outlines, and visible pigment bleeding. The mood is joyful and celebratory. The overall video presents a classic illustration watercolor style."
     },
         {
       title: "Case 03",
@@ -132,13 +132,13 @@ window.PROJECT_DATA = {
       title: "Case 05",
       media: "assets/vid/gen/gen_05.mp4",
       poster: "assets/img/gen/gen_05.png",
-      // prompt: "The red car is galloping on the track."
+      prompt: "A cinematic photography realistic video shows a white capybara statue bust shattering in slow motion, revealing the 3D text 'CAPYBARA' inside."
     },
         {
       title: "Case 06",
       media: "assets/vid/gen/gen_06.mp4",
       poster: "assets/img/gen/gen_06.png",
-      // prompt: "Aerial hyperlapse along a coastal highway at sunrise, strong parallax over cliffs, waves crashing below, cars streaking, smooth gimbal glide, cinematic clarity."
+      prompt: "Mushroom grew up from the grass."
     },
             {
       title: "Case 07",
@@ -303,7 +303,7 @@ window.PROJECT_DATA = {
       title: "Local Edit 10",
       before: "assets/img/edit/edit_img_13_before.jpg",
       after:  "assets/img/edit/edit_img_13_after.png",
-      prompt: "In the image, a green tree frog is perched on variegated green and yellow leaves, with its head and upper torso visible; its skin texture is smooth with subtle mottling, and its large, prominent eyes feature golden irises with black pupils. Change the color of the frog’s skin from green to a vivid, saturated red, ensuring the entire visible surface—including the head, back, and limbs—is uniformly transformed to this red hue. Preserve the frog’s anatomical structure, including the shape of its eyes, the contour of its mouth, and the positioning of its toes gripping the leaf. Introduce clear, distinct, round yellow spots across the red skin, placing them evenly distributed on the dorsal side and upper limbs, ensuring each spot is perfectly circular with sharp, well-defined edges and a consistent, bright yellow tone. Maintain the original lighting conditions, ensuring the red skin reflects the ambient light naturally, with subtle highlights and shadows that match the original scene’s illumination. Preserve the texture of the frog’s skin as smooth and slightly moist, with the yellow spots appearing as raised, glossy patches that contrast sharply with the red background. Ensure the frog’s eyes remain unchanged in color and appearance, and the surrounding leaves and background remain unaltered. "
+      prompt: "Change the color of the frog’s skin from green to a vivid, saturated red, ensuring the entire visible surface—including the head, back, and limbs—is uniformly transformed to this red hue. Introduce clear, distinct, round yellow spots across the red skin, placing them evenly distributed on the dorsal side and upper limbs, ensuring each spot is perfectly circular with sharp, well-defined edges and a consistent, bright yellow tone. Preserve the texture of the frog’s skin as smooth and slightly moist, with the yellow spots appearing as raised, glossy patches that contrast sharply with the red background."
     },
     // {
     //   title: "Local Edit 05",
