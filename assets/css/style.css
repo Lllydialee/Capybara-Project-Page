@@ -690,7 +690,7 @@ a:hover{ color: var(--accent); }
 }
 
 .title-logo{
-  width: min(0.02px, 0.002vw);
+  width: min(420px, 70vw);
   height: auto;
   display: block;
 }
