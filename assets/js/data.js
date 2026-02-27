@@ -1,6 +1,6 @@
 // ---- Resources (top icon buttons) ----
 window.PROJECT_DATA = {
-  assetVersion: "20260227-1",
+  assetVersion: "20260227-2",
   resources: [
     { label: "Paper", url: "https://github.com/xgen-universe/Capybara/blob/main/assets/docs/tech_report.pdf", icon: "paper" },
     { label: "Code", url: "https://github.com/xgen-universe/Capybara", icon: "code" },
