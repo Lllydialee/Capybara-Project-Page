@@ -1,9 +1,10 @@
 // ---- Resources (top icon buttons) ----
 window.PROJECT_DATA = {
   resources: [
-    { label: "Paper", url: "https://arxiv.org/abs/xxxx.xxxxx", icon: "paper" },
-    { label: "Code", url: "https://github.com/your/repo", icon: "code" },
-    { label: "Model", url: "https://huggingface.co/your/model", icon: "hf" },
+    { label: "Paper", url: "https://github.com/xgen-universe/Capybara/blob/main/assets/docs/tech_report.pdf", icon: "paper" },
+    { label: "Code", url: "https://github.com/xgen-universe/Capybara", icon: "code" },
+    { label: "Model", url: "https://huggingface.co/xgen-universe/Capybara", icon: "hf" },
+    { label: "Demo", url: "https://inappetent-acrophonically-alison.ngrok-free.dev", icon: "gradio" }
     // { label: "Dataset", url: "https://huggingface.co/datasets/your/ds", icon: "db" }
   ],
 
@@ -344,7 +345,7 @@ window.PROJECT_DATA = {
       task: "Dynamic Edit",
       src: "assets/vid/input/edit_src_05.mp4",
       out: "assets/vid/edit/edit_out_05.mp4",
-      prompt: "Change the bowl to class bowl."
+      prompt: "Add dynamic flame visual effects to the woman’s boxing gloves. The flames should originate from the surface of each glove and remain firmly attached to them throughout the motion. As her arms punch forward or swing, the flames should stretch, trail, and elongate naturally in the direction of movement, forming brief flame streaks and motion-driven tails. The flames should have realistic fire colors (bright yellow core, orange-red edges), subtle turbulence, and soft glow, without obscuring the gloves or arms. Preserve the original lighting, environment, camera motion, and the woman’s body, clothing, and facial features. Do not modify any other elements in the scene."
     },
     {
       task: "Add",
@@ -428,7 +429,7 @@ window.PROJECT_DATA = {
       task: "Dynamic Edit",
       src: "assets/vid/input/edit_src_19.mp4",
       out: "assets/vid/edit/edit_out_19.mp4",
-      prompt: "In the video, replace the current background with a romantic outdoor garden wedding scene featuring lush greenery, blooming flowers, soft draped fabric drapes, and elegant white wedding arches in the distance, maintaining the warm, golden-hour lighting and shallow depth of field from the original scene. Remove the large white pillar directly behind the woman, ensuring the background seamlessly transitions into the garden space without any visible edges or structural discontinuity, and carefully inpaint the area where the pillar was to blend with the surrounding foliage and ground texture. Keep the woman’s facial expression, gaze direction, hair, and posture completely unchanged, preserving her emotional tone and physical orientation. Ensure the lighting on her face, shoulders, and dress remains consistent with the original scene’s directional sunlight, and maintain the natural shadows and highlights on her skin and clothing as they appear in the reference frame. The edited background should feel immersive and cohesive, with soft bokeh on distant elements and clear focus on the foreground subject, while the woman’s silhouette and shadow should remain visually grounded in the new environment without any unnatural distortion or mismatched perspective."
+      prompt: "Add dynamic lightning effects to the soccer ball by overlaying stylized electric arcs and glowing energy trails that appear to emanate from the ball’s surface during each bounce and spin. The lightning should be rendered in bright white and electric blue, with high contrast against the ball’s orange and yellow panels, and should flicker and pulse in sync with the ball’s motion. Ensure the lightning effects are localized to the ball only, with no spill onto the woman’s clothing or background elements. The intensity of the lightning should increase slightly during each high arc of the ball’s trajectory to emphasize its motion and energy. Ensure temporal consistency across all frames: the lightning effects should appear and disappear in sync with the ball’s movement, with no flickering or lagging, and should scale appropriately with the ball’s size and distance from the camera. "
     },
     // {
     //   task: "Dynamic Edit",

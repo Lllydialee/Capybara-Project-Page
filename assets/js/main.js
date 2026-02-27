@@ -8,9 +8,10 @@
 
   // --------- Small SVG icon set (no external dependencies) ---------
   const ICONS = {
-    paper: `<svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l3 3v15a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7"/><path d="M14 3v4a1 1 0 0 0 1 1h4" stroke="currentColor" stroke-width="1.7"/><path d="M8 12h8M8 16h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>`,
-    code:  `<svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 9 5 12l3 3M16 9l3 3-3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 7 10 17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>`,
-    hf:    `<svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6 8c2-2 4-3 6-3s4 1 6 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M6 16c2 2 4 3 6 3s4-1 6-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8 12h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>`,
+    paper: `<img class="icon icon-img" src="assets/img/Arxiv.png" alt="" aria-hidden="true" />`,
+    code:  `<img class="icon icon-img" src="assets/img/github.png" alt="" aria-hidden="true" />`,
+    hf:    `<img class="icon icon-img" src="assets/img/hf.png" alt="" aria-hidden="true" />`,
+    gradio:`<img class="icon icon-img" src="assets/img/gradio.png" alt="" aria-hidden="true" />`,
     db:    `<svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 3c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3Z" stroke="currentColor" stroke-width="1.7"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6" stroke="currentColor" stroke-width="1.7"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" stroke="currentColor" stroke-width="1.7"/></svg>`
   };
 
