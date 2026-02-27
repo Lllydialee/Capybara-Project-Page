@@ -425,6 +425,31 @@ a:hover{ color: var(--accent); }
   background:#000;
 }
 
+.ctx-edit-top{
+  grid-template-columns: minmax(0, 1fr) max-content minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.ctx-edit-col{
+  min-width: 0;
+}
+
+.ctx-edit-video video{
+  width: 100%;
+}
+
+.ctx-refgrid-single{
+  display: flex;
+  justify-content: center;
+}
+
+.ctx-refgrid-single img{
+  width: 140px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
 .ctx-output video, .ctx-output img{
   width: 100%;
   min-width: 0;
@@ -448,6 +473,13 @@ a:hover{ color: var(--accent); }
   .ctx-card-compact .ctx-output video,
   .ctx-card-compact .ctx-output img{
     width: 100%;
+  }
+  .ctx-edit-top{
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .ctx-refgrid-single{
+    justify-content: flex-start;
   }
 }
 

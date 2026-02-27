@@ -220,15 +220,21 @@
   if (inContextEditStack && D?.inContextEdits) {
     inContextEditStack.innerHTML = D.inContextEdits.map(item => `
       <div class="ctx-card">
-        <div class="ctx-top">
-          <div>
-            <div class="ctx-refgrid">
-              ${(item.refs || []).map(p => `<img src="${p}" alt="" loading="lazy" />`).join("")}
+        <div class="ctx-top ctx-edit-top">
+          <div class="ctx-edit-col ctx-edit-video">
+            ${item.srcVideo || item.inputVideo || item.oriVideo ? `
+            <video controls ${videoAttrs(item.srcPoster || item.inputPoster || item.oriPoster)}>
+              <source src="${item.srcVideo || item.inputVideo || item.oriVideo}" type="video/mp4" />
+            </video>` : ``}
+          </div>
+          <div class="ctx-edit-col ctx-edit-ref">
+            <div class="ctx-refgrid ctx-refgrid-single">
+              ${((item.refs || [item.ref]).filter(Boolean)).slice(0, 1).map(p => `<img src="${p}" alt="" loading="lazy" />`).join("")}
             </div>
           </div>
-          <div class="ctx-output">
-            <video controls ${videoAttrs(item.poster)}>
-              <source src="${item.outputVideo}" type="video/mp4" />
+          <div class="ctx-edit-col ctx-edit-video ctx-output">
+            <video controls ${videoAttrs(item.poster || item.outPoster)}>
+              <source src="${item.outputVideo || item.outVideo}" type="video/mp4" />
             </video>
           </div>
         </div>
