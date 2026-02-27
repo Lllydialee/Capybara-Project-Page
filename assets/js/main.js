@@ -1,8 +1,14 @@
 (() => {
   const D = window.PROJECT_DATA;
+  const withAssetVersion = (url) => {
+    if (!url) return "";
+    const v = D?.assetVersion;
+    if (!v || String(url).includes("?")) return String(url);
+    return `${url}?v=${encodeURIComponent(v)}`;
+  };
   const videoAttrs = (poster) => {
     const attrs = ['autoplay', 'muted', 'loop', 'playsinline', 'preload="metadata"'];
-    if (poster) attrs.push(`poster="${escapeHtmlAttr(poster)}"`);
+    if (poster) attrs.push(`poster="${escapeHtmlAttr(withAssetVersion(poster))}"`);
     return attrs.join(" ");
   };
 
@@ -147,8 +153,8 @@
       <div class="media-card" data-prompt="${escapeHtmlAttr(x.prompt)}">
         <button class="info-btn" title="Show prompt">ⓘ</button>
         <div class="compare" data-idx="${idx}">
-          <img class="before" src="${x.before}" alt="" loading="lazy" />
-          <img class="after" src="${x.after}" alt="" loading="lazy" />
+          <img class="before" src="${withAssetVersion(x.before)}" alt="" loading="lazy" />
+          <img class="after" src="${withAssetVersion(x.after)}" alt="" loading="lazy" />
           <div class="handle"></div>
           <input class="range" type="range" min="0" max="100" value="50" aria-label="Compare slider" />
         </div>

@@ -1,5 +1,6 @@
 // ---- Resources (top icon buttons) ----
 window.PROJECT_DATA = {
+  assetVersion: "20260227-1",
   resources: [
     { label: "Paper", url: "https://github.com/xgen-universe/Capybara/blob/main/assets/docs/tech_report.pdf", icon: "paper" },
     { label: "Code", url: "https://github.com/xgen-universe/Capybara", icon: "code" },
@@ -120,13 +121,13 @@ window.PROJECT_DATA = {
       title: "Case 03",
       media: "assets/vid/gen/gen_03.mp4",
       poster: "assets/img/gen/gen_03.png",
-      // prompt: "The red car is galloping on the track."
+      prompt: "A cinematic low-angle shot of a train rushing through a semi-enclosed station. Bright, warm golden hour sunlight streaming from the tunnel exit, creating strong backlighting and dramatic lens flares. The tiled platform floor reflects the light. Fast motion blur on the passing train, high contrast, atmospheric, 4k resolution."
     },
         {
       title: "Case 04",
       media: "assets/vid/gen/gen_04.mp4",
       poster: "assets/img/gen/gen_04.png",
-      // prompt: "The red car is galloping on the track."
+      prompt: "A breathtaking time-lapse video of a night sky over a dark mountain range silhouette. Heavy purplish clouds rapidly rolling away to reveal a spectacular, vibrant vertical Milky Way core rising from the central peak. Brilliant stars, deep blue night sky, colorful cosmic dust in blue, orange, and purple, stunning astrophotography style, dramatic transition, 4k resolution."
     },
         {
       title: "Case 05",
@@ -235,7 +236,7 @@ window.PROJECT_DATA = {
     },
     {
       title: "Local Edit 01",
-      before: "assets/img/edit/edit_img_02_before.jpg",
+      before: "assets/img/edit/edit_img_02_before-2.jpg",
       after:  "assets/img/edit/edit_img_02_after.png",
       prompt: "Replace the sparrow perched on the branch with a macaw. keep the same pose and position on the branch. high resolution}"
     },
@@ -253,19 +254,19 @@ window.PROJECT_DATA = {
     },
     {
       title: "Local Edit 03",
-      before: "assets/img/edit/edit_img_05_before.jpg",
+      before: "assets/img/edit/edit_img_05_before-2.jpg",
       after:  "assets/img/edit/edit_img_05_after.png",
       prompt: "Change the indoor background to an outdoor grassy field with small flowers environment. Ensure the dog remains unchanged in appearance, pose, expression, and position."
     },
     {
       title: "Local Edit 04",
-      before: "assets/img/edit/edit_img_06_before.jpg",
+      before: "assets/img/edit/edit_img_06_before-2.jpg",
       after:  "assets/img/edit/edit_img_06_after.png",
       prompt: "Remove the vase and flowers in front of the cat."
     },
     {
       title: "Local Edit 05",
-      before: "assets/img/edit/edit_img_07_before.jpg",
+      before: "assets/img/edit/edit_img_07_before-1.jpg",
       after:  "assets/img/edit/edit_img_07_after.png",
       prompt: "Add a symmetrical wing-shaped tattoo on the model’s bare upper back. Ensure it looks naturally placed and anatomically aligned. keep the model's face, the original pose, lighting, skin texture, and fabric details, and the background  unchanged."
     },
